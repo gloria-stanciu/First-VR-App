@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.57208884, g: 0.5717087, b: 0.57198614, a: 1}
+  m_IndirectSpecularColor: {r: 0.56738424, g: 0.56689453, b: 0.5672515, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -335,7 +335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2468453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.124, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1320042368}
@@ -8709,8 +8709,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9945489, g: 1, b: 0.8632076, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.98274493, b: 0.3915094, a: 1}
+  m_Intensity: 1.42
   m_Range: 15.88
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -8722,7 +8722,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.66
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -8752,14 +8752,14 @@ Light:
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 5.19
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.5904e-41, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 6.56e-43, y: 1.125e-42, z: 0, w: 101.973816}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 3
 --- !u!4 &705507995
 Transform:
   m_ObjectHideFlags: 0
@@ -8767,13 +8767,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.28919885, y: 0, z: 0, w: 0.9572691}
+  m_LocalRotation: {x: 0.7753467, y: -0.4410407, z: -0.15054774, w: 0.42621115}
   m_LocalPosition: {x: 0, y: 10.92, z: 3.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 33.62, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.879, y: -134.139, z: -106.956}
 --- !u!1001 &709958486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19128,8 +19128,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
+      propertyPath: waterUVs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
       propertyPath: shoreFade
-      value: 0.36
+      value: 0.556
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: waveSpeed
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19139,17 +19149,32 @@ PrefabInstance:
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: shoreBlend
-      value: 0.142
+      value: 0.191
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: shoreDepth
-      value: 0.24
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: waveLength
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: deepColor.g
-      value: 0.427244
+      value: 0.42711416
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: normalsScale
+      value: 0.201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: normalsSpeed
+      value: 0.021
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19159,7 +19184,7 @@ PrefabInstance:
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: shoreColor.b
-      value: 0.3017538
+      value: 0.30162397
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19169,12 +19194,27 @@ PrefabInstance:
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: waveSteepness
-      value: 0.017
+      value: 0.054
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: waveVisuals.x
-      value: 0.017
+      value: 0.054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: waveVisuals.y
+      value: 1.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: waveVisuals.z
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: hideComponents
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19189,7 +19229,12 @@ PrefabInstance:
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: horizonColor.r
-      value: 0.38202086
+      value: 0.381891
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: waveDirection1
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19204,7 +19249,12 @@ PrefabInstance:
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamBlend
-      value: 1
+      value: 0.537
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: waveDirections.x
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19213,18 +19263,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
+      propertyPath: normalsMovement.x
+      value: 0.021
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: normalsMovement.y
+      value: 0.201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
       propertyPath: surfaceFoamCutoff
-      value: 0.353
+      value: 0.096
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamScale1
-      value: 0.273
+      value: 0.024
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamScale2
-      value: 0.335
+      value: 0.006
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19234,12 +19294,22 @@ PrefabInstance:
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamSpeed2
-      value: 0
+      value: 0.748
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: refractionStrength
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: intersectionFoamBlend
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: intersectionFoamDepth
-      value: 0.17
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19249,7 +19319,7 @@ PrefabInstance:
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: intersectionFoamSpeed
-      value: 0
+      value: 0.438
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19259,17 +19329,17 @@ PrefabInstance:
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamDirection2
-      value: 0.332
+      value: 0.087
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamDistortion
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamMovement.w
-      value: 0
+      value: 0.748
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19284,42 +19354,47 @@ PrefabInstance:
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamMovement.z
-      value: 0.332
+      value: 0.087
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamSampling.x
-      value: 0.353
+      value: 0.096
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamSampling.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: intersectionFoamCutoff
-      value: 0.091
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
-        type: 3}
-      propertyPath: intersectionFoamDirection
-      value: 0.105
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
-        type: 3}
-      propertyPath: intersectionFoamDistortion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
+      propertyPath: intersectionWaterBlend
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: intersectionFoamDirection
+      value: 0.172
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: intersectionFoamDistortion
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
       propertyPath: surfaceFoamTilingAndOffset.w
-      value: 0.335
+      value: 0.006
       objectReference: {fileID: 0}
     - target: {fileID: 4116252390263242837, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: surfaceFoamTilingAndOffset.z
-      value: 0.273
+      value: 0.024
       objectReference: {fileID: 0}
     - target: {fileID: 4724820881417189119, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19331,6 +19406,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4724820881417189119, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461884272158048803, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461884272158048803, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8631912116689749228, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: m_RootOrder
@@ -19340,6 +19430,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631912116689749228, guid: d1a87658e7cd315438ddef4749540b48,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.84086
       objectReference: {fileID: 0}
     - target: {fileID: 8631912116689749228, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -19359,7 +19454,7 @@ PrefabInstance:
     - target: {fileID: 8631912116689749228, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.58
+      value: 27.965046
       objectReference: {fileID: 0}
     - target: {fileID: 8631912116689749228, guid: d1a87658e7cd315438ddef4749540b48,
         type: 3}
@@ -20124,6 +20219,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2030835894}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2049995704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4724820881417189119, guid: d1a87658e7cd315438ddef4749540b48,
+    type: 3}
+  m_PrefabInstance: {fileID: 1882428706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2049995705
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049995704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3830246371530891877, guid: 3a3d08dbcecd2834e906f945a31ac7c7, type: 3}
 --- !u!1001 &2053764090
 PrefabInstance:
   m_ObjectHideFlags: 0
