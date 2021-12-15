@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public enum HandType
 {
@@ -8,10 +9,19 @@ public enum HandType
   Right
 }
 
+public enum HandState {
+    Idle,
+    GrabDistance,
+    GrabDirect
+  }
+
 public class XRHandController : MonoBehaviour
 {
   public HandType handType;
   public float thumbMoveSpeed = 0.1f;
+
+  public HandState handState { get; set; } = HandState.Idle;
+  private HandState oldHandState;
 
   private Animator animator;
   private InputDevice inputDevice;
@@ -30,7 +40,14 @@ public class XRHandController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    AnimateHand();
+    if(handState == HandState.Idle) {
+      AnimateHand();
+    }
+    if(handState == HandState.GrabDirect) {
+      AnimateGrabDirect();
+    }
+
+    oldHandState = handState;
   }
 
   InputDevice GetInputDevice()
@@ -74,5 +91,11 @@ public class XRHandController : MonoBehaviour
     animator.SetFloat("Index", indexValue);
     animator.SetFloat("ThreeFingers", threeFingersValue);
     animator.SetFloat("Thumb", thumbValue);
+  }
+
+  void AnimateGrabDirect()
+  {
+    // animator.Play("AirGrab");
+    animator.SetFloat("AirGrab", 1);
   }
 }

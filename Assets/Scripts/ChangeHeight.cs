@@ -27,24 +27,20 @@ public class ChangeHeight : MonoBehaviour
 
     public void SliderChange(float newValue)
     {
-
-        //change camera position
         Vector3 canvasPosition = canvas.transform.position;
         Vector3 cameraPosition = cameraGameObject.transform.position;
         
-        canvasPosition.y = newValue - (canvasPosition.y - cameraPosition.y);
+        canvasPosition.y = newValue + (canvasPosition.y - cameraPosition.y);
         cameraPosition.y = newValue;
         
         canvas.transform.position = canvasPosition;
         cameraGameObject.transform.position = cameraPosition;
-        
-        //change canvas position
     }
 
     public void ResetValue()
     {
-        cameraGameObject.transform.position = initialCameraValue;
-        canvas.transform.position = initialCanvasValue;
         heightSlider.value = initialSliderValue;
+        canvas.transform.position = new Vector3(initialCanvasValue.x, initialCanvasValue.y + (initialCanvasValue.y - initialCameraValue.y), initialCameraValue.z);
+        cameraGameObject.transform.position = initialCameraValue;
     }
 }
