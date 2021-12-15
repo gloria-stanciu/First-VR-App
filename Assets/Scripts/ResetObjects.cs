@@ -15,17 +15,6 @@ public class ResetObjects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void RespawnObjects()
-    {
         foreach(GameObject stack in GameObject.FindGameObjectsWithTag(tag))
         {
             //set all the objects to be stationary
@@ -38,18 +27,20 @@ public class ResetObjects : MonoBehaviour
             posAndRot.position = stack.transform.position;
             posAndRot.rotation = stack.transform.rotation;
             initialPositions[stack.transform] = posAndRot;
+        }
+    }
+    public void RespawnObjects()
+    {
+        //reset objects
+        foreach(var pair in initialPositions)
+        {
+            Transform t = pair.Key;
+            t.position = pair.Value.position;
+            t.rotation = pair.Value.rotation;
 
-            //reset objects
-            foreach(var pair in initialPositions)
-            {
-                Transform t = pair.Key;
-                t.position = pair.Value.position;
-                t.rotation = pair.Value.rotation;
-
-                // var rb = t.GetComponent<Rigidbody>();
-                // rb.velocity = Vector3.zero;
-                // rb.angularVelocity = Vector3.zero;
-            }
+            // var rb = t.GetComponent<Rigidbody>();
+            // rb.velocity = Vector3.zero;
+            // rb.angularVelocity = Vector3.zero;
         }
     }
 }

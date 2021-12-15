@@ -7,26 +7,26 @@ public class ChangeHeight : MonoBehaviour
 {
     public GameObject cameraGameObject;
     public Slider heightSlider;
+    public Canvas canvas;
+
     private Vector3 initialCameraValue;
     private Vector3 initialCanvasValue;
     private float initialSliderValue;
-    public Canvas canvas;
-    // Start is called before the first frame update
+    private bool isChanged;
+
     void Start()
     {
-        initialCameraValue = cameraGameObject.transform.position;
         initialCanvasValue = canvas.transform.position;
         initialSliderValue = (float)heightSlider.value;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SliderChange(float newValue)
     {
+        if(!isChanged) {
+            initialCameraValue = cameraGameObject.transform.position;
+            isChanged = true;
+        }
+
         Vector3 canvasPosition = canvas.transform.position;
         Vector3 cameraPosition = cameraGameObject.transform.position;
         
@@ -39,8 +39,10 @@ public class ChangeHeight : MonoBehaviour
 
     public void ResetValue()
     {
+        if(!isChanged) return;
+
         heightSlider.value = initialSliderValue;
-        canvas.transform.position = new Vector3(initialCanvasValue.x, initialCanvasValue.y + (initialCanvasValue.y - initialCameraValue.y), initialCameraValue.z);
+        canvas.transform.position = initialCanvasValue;
         cameraGameObject.transform.position = initialCameraValue;
     }
 }
