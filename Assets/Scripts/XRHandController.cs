@@ -41,10 +41,14 @@ public class XRHandController : MonoBehaviour
   void Update()
   {
     if(handState == HandState.Idle) {
+      if(oldHandState == HandState.GrabDistance){
+        animator.SetFloat("AirGrab", 0);
+      }
+      animator.Play("Blend Tree");
       AnimateHand();
     }
-    if(handState == HandState.GrabDirect) {
-      AnimateGrabDirect();
+    if(handState == HandState.GrabDistance) {
+      AnimateGrabDistance();
     }
 
     oldHandState = handState;
@@ -93,9 +97,15 @@ public class XRHandController : MonoBehaviour
     animator.SetFloat("Thumb", thumbValue);
   }
 
-  void AnimateGrabDirect()
+  void AnimateGrabDistance()
   {
     // animator.Play("AirGrab");
+    animator.Play("AirGrab");
     animator.SetFloat("AirGrab", 1);
+  }
+
+  public void setHandState(int handState)
+  {
+    this.handState = (HandState)handState;
   }
 }
