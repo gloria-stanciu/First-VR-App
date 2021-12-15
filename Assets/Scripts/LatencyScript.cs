@@ -10,6 +10,7 @@ public class LatencyScript : MonoBehaviour
 
     Vector3 m_targetPosition;
     Quaternion m_targetRotation;
+    // public Collider latencyTriggerCube;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +21,7 @@ public class LatencyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            m_lag = !m_lag;
-        }
+
     }
 
     void LateUpdate ()
@@ -47,5 +45,12 @@ public class LatencyScript : MonoBehaviour
         yield return new WaitForSeconds(m_lagTime/1000f);
         transform.position = _pos;
         transform.rotation = _rot;
+    }
+
+    private void OnTriggerEnter(Collider collider) {
+        m_lag = true;
+    }
+    private void OnTriggerExit(Collider collider) {
+        m_lag=false;
     }
 }
