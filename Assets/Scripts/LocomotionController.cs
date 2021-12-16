@@ -27,6 +27,12 @@ public class LocomotionController : MonoBehaviour
     int index = 0;
     bool validTarget = false;
 
+    RaycastHit hit;
+    leftInteractorRay.TryGetCurrent3DRaycastHit(out hit);
+    if(hit.transform) {
+      Debug.Log(hit.transform.gameObject.name);
+    }
+
     if (CheckIfActivated(rightTeleportRay) && CheckIfActivated(leftTeleportRay)) return;
 
     if (CheckIfActivated(rightTeleportRay) && EnableRightTeleport)
