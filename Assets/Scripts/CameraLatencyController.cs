@@ -17,7 +17,6 @@ public class CameraLatencyController : MonoBehaviour
 
     void Start() {
         delayedCamera = GetComponent<Camera>();
-        Debug.Log(delayedCamera.enabled);
     }
 
     void LateUpdate ()
@@ -51,13 +50,11 @@ public class CameraLatencyController : MonoBehaviour
     private void OnTriggerEnter(Collider collider) {
         if(collider.gameObject.tag == "LatencyZone")
         {
-            Debug.Log("Entered Lag Area");
             delayedCamera.depth = 10;
             enableEffect = true;
         }
     }
     private void OnTriggerExit(Collider collider) {
-        Debug.Log("Exited Lag Area");
         delayedCamera.depth = -1;
 
         enableEffect=false;
