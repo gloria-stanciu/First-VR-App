@@ -7,24 +7,28 @@ public class OcclusionZone : MonoBehaviour
     // enum RenderModeStates { camera, overlay, world };
     // RenderModeStates m_RenderModeStates;
     public Canvas canvasOcclusion;
-    private Vector3 initialCanvasValue;
+    public GameObject cameraParent;
+    public GameObject canvasParent;
+    
+    private Vector3 initialCanvasPosition;
+    private Quaternion initialCanvasRotation;
     // Start is called before the first frame update
     void Start()
     {
-        initialCanvasValue = canvasOcclusion.transform.position;
+        initialCanvasPosition = canvasOcclusion.transform.position;
+        initialCanvasRotation = canvasOcclusion.transform.rotation;
     }
 
 
     public void onClickOcclude()
     {
-        if(canvasOcclusion.renderMode == RenderMode.WorldSpace)
+        if(canvasOcclusion.transform.parent == cameraParent.transform)
         {
-            canvasOcclusion.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvasOcclusion.transform.SetParent(canvasParent.transform);
         }
-        else if(canvasOcclusion.renderMode == RenderMode.ScreenSpaceOverlay)
+        else
         {
-            canvasOcclusion.renderMode = RenderMode.WorldSpace;
-            canvasOcclusion.transform.position = initialCanvasValue;
+            canvasOcclusion.transform.SetParent(cameraParent.transform);
         }
     }
 
